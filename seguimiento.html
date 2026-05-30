@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seguimiento RH-250 Módulo 2</title>
+<style>
+:root{--bg:#0f172a;--bg2:#020617;--card:#111827;--text:#f8fafc;--muted:#cbd5e1;--line:rgba(255,255,255,.14);--blue:#38bdf8;--green:#22c55e;--yellow:#facc15;--violet:#a78bfa;--orange:#fb923c;--red:#fb7185;--radius:22px;--shadow:0 18px 45px rgba(0,0,0,.35)}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:Arial,Helvetica,sans-serif;color:var(--text);background:radial-gradient(circle at top left,rgba(56,189,248,.22),transparent 34%),radial-gradient(circle at top right,rgba(34,197,94,.16),transparent 30%),linear-gradient(180deg,var(--bg),var(--bg2));line-height:1.6;min-height:100vh}a{color:inherit;text-decoration:none}.container{width:min(1180px,92%);margin:auto}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(7,17,31,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:14px 0}.brand{font-weight:900}.brand span{display:block;color:var(--muted);font-weight:400;font-size:.84rem}.links{display:flex;gap:8px;flex-wrap:wrap}.links a{color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:8px 12px;font-size:.9rem}.links a:hover,.links a.active{color:#fff;border-color:var(--blue);background:rgba(56,189,248,.12)}
+.hero{padding:64px 0 34px}.hero-card{border:1px solid var(--line);border-radius:var(--radius);padding:34px;background:linear-gradient(135deg,rgba(30,41,59,.94),rgba(7,17,31,.94));box-shadow:var(--shadow)}.badge{display:inline-block;padding:7px 12px;border-radius:999px;background:rgba(56,189,248,.12);border:1px solid rgba(56,189,248,.35);color:#bae6fd;font-size:.88rem;margin-bottom:16px}.badge.green{background:rgba(34,197,94,.12);border-color:rgba(34,197,94,.35);color:#bbf7d0}.badge.violet{background:rgba(167,139,250,.14);border-color:rgba(167,139,250,.38);color:#ddd6fe}.badge.yellow{background:rgba(250,204,21,.14);border-color:rgba(250,204,21,.38);color:#fef08a}
+h1{font-size:clamp(2.1rem,5vw,4.3rem);line-height:1.05;letter-spacing:-1.3px;margin-bottom:16px}h2{font-size:clamp(1.55rem,3vw,2.35rem);letter-spacing:-.7px;margin-bottom:12px}h3{font-size:1.25rem;margin-bottom:10px}p{color:var(--muted);margin-bottom:14px}.hero p{font-size:1.08rem;max-width:920px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn,button.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:14px;border:1px solid transparent;background:linear-gradient(135deg,var(--blue),#2563eb);color:#fff;font-weight:800;min-height:44px;transition:.2s;cursor:pointer}.btn:hover,button.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}.btn.green{background:linear-gradient(135deg,var(--green),#15803d)}.btn.gray{background:rgba(255,255,255,.07);border-color:var(--line);color:var(--text)}.btn.yellow{background:linear-gradient(135deg,var(--yellow),#ca8a04);color:#111827}.btn.violet{background:linear-gradient(135deg,var(--violet),#7c3aed)}.btn.orange{background:linear-gradient(135deg,var(--orange),#ea580c)}
+section{padding:34px 0}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{background:rgba(17,24,39,.86);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 12px 28px rgba(0,0,0,.2)}.kpi strong{display:block;font-size:2rem;color:var(--blue);margin-bottom:4px}.kpi span{color:var(--muted)}
+.tag{display:inline-block;padding:6px 10px;border-radius:999px;margin-bottom:12px;font-size:.78rem;font-weight:900;background:rgba(56,189,248,.13);border:1px solid rgba(56,189,248,.35);color:#bae6fd}.tag.green{background:rgba(34,197,94,.13);border-color:rgba(34,197,94,.35);color:#bbf7d0}.tag.yellow{background:rgba(250,204,21,.13);border-color:rgba(250,204,21,.35);color:#fef08a}.tag.red{background:rgba(251,113,133,.13);border-color:rgba(251,113,133,.35);color:#fecdd3}.tag.violet{background:rgba(167,139,250,.13);border-color:rgba(167,139,250,.35);color:#ddd6fe}.tag.orange{background:rgba(251,146,60,.13);border-color:rgba(251,146,60,.35);color:#fed7aa}
+.notice{border:1px solid rgba(250,204,21,.35);background:rgba(250,204,21,.1);color:#fef9c3;border-radius:16px;padding:14px 16px;margin-top:14px}.success{border:1px solid rgba(34,197,94,.35);background:rgba(34,197,94,.1);color:#dcfce7;border-radius:16px;padding:14px 16px;margin-top:14px}.message{white-space:pre-line;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:16px;padding:18px;color:var(--muted);margin:14px 0}.quote{border-left:4px solid var(--blue);padding:12px 16px;background:rgba(56,189,248,.08);border-radius:12px;color:#e0f2fe;margin:16px 0}
+ul,ol{color:var(--muted);margin-left:22px;margin-bottom:14px}li{margin:7px 0}.table{width:100%;border-collapse:collapse;margin-top:12px}.table th,.table td{border:1px solid var(--line);padding:12px;text-align:left;color:var(--muted);vertical-align:top}.table th{color:#fff;background:rgba(255,255,255,.06)}.code{font-family:Consolas,monospace;background:#020617;border:1px solid var(--line);border-radius:14px;padding:14px;color:#dbeafe;overflow:auto}
+footer{border-top:1px solid var(--line);padding:28px 0;margin-top:26px;color:var(--muted);text-align:center;font-size:.92rem}.hidden{display:none}
+@media(max-width:900px){.grid,.grid3,.grid4{grid-template-columns:1fr}.hero-card{padding:24px}.hero{padding-top:40px}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="container nav">
+<a class="brand" href="index.html">RH-250 · Módulo 2<span>Ecosistema laboral · carpetas + WhatsApp</span></a>
+<div class="links">
+<a href="index.html" class="">Inicio</a>
+<a href="presentacion.html" class="">Presentación</a>
+<a href="red_laboral.html" class="">Red</a>
+<a href="roles.html" class="">Roles</a>
+<a href="actividad.html" class="">Actividad</a>
+<a href="kobo.html" class="">Kobo</a>
+<a href="seguimiento.html" class="active">Seguimiento</a>
+<a href="carpetas.html" class="">Carpetas</a>
+<a href="whatsapp.html" class="">WhatsApp</a>
+</div></div></div>
+
+
+<header class="hero"><div class="container"><div class="hero-card">
+<span class="badge green">Seguimiento</span><h1>Del compromiso al perfil laboral</h1>
+<p>La red RH-250 necesita trazabilidad: compromiso registrado, evidencia entregada, avance revisado y siguiente acción definida.</p>
+<div class="actions"><a class="btn yellow" data-link="sheet" href="#">Abrir matriz</a><a class="btn green" data-link="drive_general" href="#">Abrir Drive</a><a class="btn orange" data-link="drive_evidencias" href="#">Evidencias</a><a class="btn gray" href="index.html">Volver</a></div>
+</div></div></header>
+<main class="container">
+<section class="grid4 kpi"><div class="card"><strong>1</strong><span>Registrado</span></div><div class="card"><strong>2</strong><span>En proceso</span></div><div class="card"><strong>3</strong><span>Con evidencia</span></div><div class="card"><strong>4</strong><span>Requiere apoyo</span></div></section>
+<section><div class="card"><h2>Matriz mínima</h2><table class="table"><thead><tr><th>Campo</th><th>Función</th></tr></thead><tbody><tr><td>Nombre</td><td>Identifica al participante.</td></tr><tr><td>Rol</td><td>Clasifica el aporte.</td></tr><tr><td>Habilidad</td><td>Permite detectar capacidades.</td></tr><tr><td>Compromiso</td><td>Define qué hará.</td></tr><tr><td>Evidencia</td><td>Permite verificar avance.</td></tr><tr><td>Estado</td><td>Registrado, en proceso, con evidencia o requiere apoyo.</td></tr></tbody></table></div></section>
+</main>
+
+<footer><div class="container">RH-250 · Módulo 2 · HTML en una sola carpeta · preparado para Drive y WhatsApp.</div></footer>
+
+<script>
+/*
+  CONEXIONES DEL ECOSISTEMA
+  Reemplaza los símbolos # por tus enlaces reales.
+  Esta versión es HTML puro; por eso este bloque está repetido en cada archivo.
+*/
+const LINKS = {
+  dia1:"https://dcoellom2-creator.github.io/Recursos_Humanos/",
+  kobo:"#",
+  sheet:"#",
+  drive_general:"#",
+  drive_participantes:"#",
+  drive_evidencias:"#",
+  drive_reportes:"#",
+  drive_mensajes:"#",
+  whatsapp_grupo:"https://wa.me/593988815908?text=Hola%2C%20quiero%20participar%20en%20el%20M%C3%B3dulo%202%20RH-250%20Ecosistema%20Laboral.%20Quiero%20registrar%20mi%20habilidad%2C%20mi%20rol%20y%20mi%20compromiso.",
+  whatsapp_privado:"https://wa.me/593988815908?text=Hola%2C%20quiero%20participar%20en%20el%20M%C3%B3dulo%202%20RH-250%20Ecosistema%20Laboral.%20Quiero%20registrar%20mi%20habilidad%2C%20mi%20rol%20y%20mi%20compromiso.",
+  github:"#"
+};
+function aplicarLinks(){
+  document.querySelectorAll("[data-link]").forEach(el=>{
+    const k=el.getAttribute("data-link");
+    if(LINKS[k] && LINKS[k] !== "#") el.href=LINKS[k];
+  });
+}
+function copiarTexto(id){
+  const t=document.getElementById(id).innerText;
+  navigator.clipboard.writeText(t).then(()=>{
+    const ok=document.getElementById("copiado");
+    if(ok){ok.classList.remove("hidden");setTimeout(()=>ok.classList.add("hidden"),2200);}
+  }).catch(()=>alert("No se pudo copiar automáticamente. Selecciona el texto y cópialo manualmente."));
+}
+document.addEventListener("DOMContentLoaded",aplicarLinks);
+</script>
+
+</body>
+</html>
